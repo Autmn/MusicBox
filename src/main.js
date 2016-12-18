@@ -21,17 +21,14 @@ const router = new VueRouter({
 				{path: '/musicRepertory/header', component: VrepertoryContent,
 					children:[
 						{path: '/musicRepertory/header/',component: VRepConAll},
-						{path: '/musicRepertory/header/Chinese',component: VRepConAll},
 					]
 			},
-				{path: '/musicRepertory/singer', component: VrepertoryContent},
+				// {path: '/musicRepertory/singer', component: VrepertoryContent},
 			],
-			beforeEnter: (to, from, next) => {
-			       next();
-			     }
+		
 
 		},
-		{path: 'myMusic',component:VmyMusic}		
+		{path: '/myMusic',component:VmyMusic}		
 	]
 });
 new Vue({

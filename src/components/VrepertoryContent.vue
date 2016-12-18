@@ -10,9 +10,7 @@
 					<router-link :to="'/musicRepertory/header/korea'" tag='li'>韩国</router-link>
 					<router-link :to="'/musicRepertory/header/Japan'" tag='li'>日本</router-link>
 				</ul>
-				<div class="split"></div>
-			</nav>
-			
+			</nav>			
 			<router-view></router-view>
 		</div>
 	</div>
