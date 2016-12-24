@@ -7,7 +7,7 @@
 				<router-link :to="'/myMusic'" tag="li">我的音乐</router-link>
 				<li>VIP</li>
 			</ul>
-			<el-input class="searchInput" placeholder = "薛之谦" icon = "search"></el-input>
+			<el-autocomplete class="searchInput" placeholder="薛之谦"v-model="state" :fetch-suggestions="querySearch" @select="handleSelect"></el-autocomplete>
 			<div class="loginBtn">
 				<a @click="popLogin">登陆</a>
 			</div>
@@ -36,6 +36,8 @@
 	
 	var data = {
 		dialogFormVisible: false,
+		state:'',
+		sugSongs:[],
 		
 	}
 	export default {
@@ -45,7 +47,32 @@
 		 methods:{
 			popLogin: function () {
 				this.dialogFormVisible = true;
+			},
+			querySearch(queryString,cb) {
+				let subSongs = this.subSongs;
+				let results = queryString ? subSongs.filter(this.createFilter(queryString)):subSongs;
+				cb(results);
+			},
+			createFilter(queryString) {
+				return (sugSong) => {
+					return (sugSong.value.indexOf(queryString.toLowerCase()) === 0);
+				}
+			},
+			loadAll() {
+				return [
+					{"value": "刚刚好"},
+					{"value": "演员"},
+					{"value": "你还要我怎样"},
+					{"value": "我知道你都知道"},
+					{"value": "我好像在哪见过你"},
+				]
+			},
+			handleSelect(item) {
+
 			}
+		},
+		mounted() {
+			this.subSongs = this.loadAll();
 		}
 	}
 </script>
@@ -96,6 +123,7 @@
 			float: left;
 			margin-top: 22px;
 			padding: 0;
+			
 
 		}
 		#m-nav i {
@@ -114,13 +142,13 @@
 		}
 
 		.el-form-item {
-			width: 50%;
+			width: 260px;
 			margin:20px auto;
 		}
-	
 		.password {
 			word-spacing: 18px;
 		}
+
 		.loginInput {
 			float: left;
 		}

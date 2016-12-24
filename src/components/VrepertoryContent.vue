@@ -30,6 +30,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
 #rep-container-newSong {
 	height: 734px;
 	background: #000 url(../assets/images/bg_index_new.jpg) 50% 0 repeat-x;
@@ -63,4 +64,5 @@ ul {
 .router-link-active {
 	color: #20a0ff;
 }
+
 </style>

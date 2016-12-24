@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <Vplayer></Vplayer>
     <vnav></vnav>
      <router-view></router-view>
   </div>
 </template>
 
 <script>
+import Vplayer from './components/Vplayer.vue'
 import Vnav from './components/Vnav'
 export default {
   name: 'app',
   components: {
+    Vplayer,
     Vnav
   }
 }

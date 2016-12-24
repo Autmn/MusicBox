@@ -12,7 +12,6 @@
 		<div class="split"></div>
 		<router-view></router-view>
 	</div>
-	
 </template>
 <script type="text/javascript">
 	var data = {

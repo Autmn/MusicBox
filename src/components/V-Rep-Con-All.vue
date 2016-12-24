@@ -191,6 +191,7 @@ export default {
 		top: 230px;
 		width: 100%;
 		text-align: center;
+		overflow-x: hidden;
 	}
 
 	.wrap:hover .pre {
@@ -209,6 +210,7 @@ export default {
 		left: -80px;
 		z-index: 1;
 		transition: left 1s;
+		cursor: pointer;
 	}
 
 	.Carousel-content {
@@ -221,6 +223,7 @@ export default {
 		position: absolute;
 		right: -80px;
 		transition: right 1s;
+		cursor: pointer;
 	}
 
 	.arrow {

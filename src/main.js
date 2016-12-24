@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
+import VmyMusic from 'components/VmyMusic.vue'
+
 import VrepertoryNav from 'components/VrepertoryNav.vue'
 import VrepertoryContent from 'components/VrepertoryContent.vue'
 import VRepConAll from 'components/V-Rep-Con-All.vue' 
-import VmyMusic from 'components/VmyMusic.vue'
+import VRepSinger from 'components/VrepertorySinger.vue'
+
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
@@ -23,7 +26,7 @@ const router = new VueRouter({
 						{path: '/musicRepertory/header/',component: VRepConAll},
 					]
 			},
-				// {path: '/musicRepertory/singer', component: VrepertoryContent},
+				{path: '/musicRepertory/singer', component: VRepSinger},
 			],
 		
 
